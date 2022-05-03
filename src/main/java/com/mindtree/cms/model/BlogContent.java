@@ -4,7 +4,6 @@
 package com.mindtree.cms.model;
 
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author M1030563
+ * @author ramki2711
  *
  */
 @Entity

@@ -14,7 +14,7 @@ import com.mindtree.cms.model.BlogComments;
 import com.mindtree.cms.model.BlogContent;
 
 /**
- * @author M1029673
+ * @author ramki2711
  *
  */
 @Repository
@@ -30,6 +30,7 @@ public class BlogDaoImpl implements BlogDao {
 		System.out.print(sessionFactory);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<BlogContent> findAll() {
 		// TODO Auto-generated method stub
 		Session session = this.sessionFactory.openSession();
@@ -37,6 +38,7 @@ public class BlogDaoImpl implements BlogDao {
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<BlogComments> findAllBlogComments(int blogId) {
 		Session session = this.sessionFactory.openSession();
 		List<BlogComments> list = session.createQuery("from BlogComments where blogContent.blogId=:blogId")

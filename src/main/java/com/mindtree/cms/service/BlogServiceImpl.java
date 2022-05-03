@@ -45,7 +45,7 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	public List<BlogFo> findAll() {
-		List<BlogFo> blogFos = new ArrayList();
+		List<BlogFo> blogFos = new ArrayList<>();
 		try {
 			List<BlogContent> blogContents = blogDao.findAll();
 			for (BlogContent blogContent : blogContents) {
@@ -55,7 +55,7 @@ public class BlogServiceImpl implements BlogService {
 				byte[] encodeBase64 = Base64.encodeBase64(blogContent.getFile());
 				String imgBase64encoded = new String(encodeBase64, "UTF-8");
 				blogFo.setImageSrc(imgBase64encoded);
-				List<BlogCommentsFo> commentsFos = new ArrayList();
+				List<BlogCommentsFo> commentsFos = new ArrayList<>();
 				for (BlogComments blogComments : blogContent.getBlogComments()) {
 					BlogCommentsFo blogCommentsFo = new BlogCommentsFo();
 					blogCommentsFo.setComment(blogComments.getComment());
@@ -74,8 +74,7 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	public List<BlogCommentsFo> findAllBlogComments(int blogId) {
-		List<BlogCommentsFo> commentsFos = new ArrayList();
-		List<BlogFo> blogFos = new ArrayList();
+		List<BlogCommentsFo> commentsFos = new ArrayList<>();
 		try {
 			List<BlogComments> comments = blogDao.findAllBlogComments(blogId);
 
